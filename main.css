@@ -1,0 +1,67 @@
+body{
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+#conatiner{
+    width: 100vw;
+    height: 80vh;
+    border-bottom: 2px solid black;
+    background-image: url("sky.jpg");
+    background-size: contain;
+}
+#background{
+ background-image: url("ground.jpg");
+    width: 100vw;
+    height: 20vh;
+}
+#dino{
+    height: 15vh;
+    width: 20vw;
+    background-image: url("squidward.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    top: 63vh;
+}
+.animate{
+    animation: dino 750ms ;
+    }
+#object{
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    animation: object 2s infinite linear;
+    height: 15vh;
+    width: 20vw;
+    top: 50vh;
+    left: 92vw;
+    background-image: url("jellyfish.png");
+   
+}
+@keyframes object{
+    0%{left: 92vw;}
+    100%{left: -20vw;}
+}
+@keyframes dino {
+    0%{top: 65vh;}
+    30%{top: 40vh;}
+    70%{top: 40vh;}
+    100%{top: 65vh;}
+}
+@media only screen 
+and (min-device-width: 280px) 
+and (max-device-width: 450px) {
+
+    #conatiner{
+        background-size: cover;
+    }
+    #dino{
+        top: 69vh;
+    }
+    #object{
+        height: 12vh;
+        width: 15vw;
+        top: 55vh;
+    }
+}

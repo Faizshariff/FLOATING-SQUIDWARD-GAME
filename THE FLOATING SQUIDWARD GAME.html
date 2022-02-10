@@ -1,0 +1,44 @@
+                                                                                                                                                                         <!DOCTYPE html>
+<html lang="en" id="btn">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title">THE HANDSOME SQUIDWARD GAME</title>
+    <link rel="stylesheet" type="text/css" href="main.css"/>
+</head>
+<body>
+    <div id="conatiner">
+      <div id="dino"><div></div></div>
+        <div id="object" ></div>
+    </div>
+    <div id="background"></div>
+    <script>
+var character = document.getElementById("dino");
+var block = document.getElementById("object");
+var counter=0;
+document.getElementById("btn").addEventListener("click", jump);
+function jump(){
+    if(character.classList == "animate"){return}
+    character.classList.add("animate");
+    setTimeout(function(){
+        character.classList.remove("animate");
+    },750);
+}
+var checkDead = setInterval(function() {
+    let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
+    let blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left"));
+    if(blockLeft<30 && blockLeft>-30 && characterTop>=450){
+        block.style.animation = "none";
+        alert("SQUIDWARD SAYS:ANOTHER DAY ANOTHER MIGRAINE");
+        counter=0;
+        block.style.animation = "block 1s infinite linear";
+    }else{
+        counter++;
+        
+    }
+}, 10);
+    </script>
+</body>
+</html>
